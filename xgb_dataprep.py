@@ -855,7 +855,7 @@ class XGBoostDataPrep:
                   "num_round": HP_DEFAULTS["num_round"],
                   "early_stopping_rounds": HP_DEFAULTS["early_stopping_rounds"],
                   "verbosity": 1}
-        if self.num_class:
+        if self.resolved_task == "multiclass":
             static["num_class"] = self.num_class
         if self.scale_pos_weight is not None:
             static["scale_pos_weight"] = self.scale_pos_weight
